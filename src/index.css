@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Chakra Petch", sans-serif; /* Changed to Chakra Petch */
+}
+
+body {
+  margin: 0px !important;
+  padding: 0;
+  font-family: "Chakra Petch", sans-serif; /* Changed to Chakra Petch */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 80px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #191f27;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #575c66;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #626970;
+}
+
+/* Apply backdrop-filter for blur and saturation effects */
+::-webkit-backdrop-filter {
+  backdrop-filter: blur(3px) saturate(106%);
+  -webkit-backdrop-filter: blur(3px) saturate(106%); /* For Safari */
+}
+
