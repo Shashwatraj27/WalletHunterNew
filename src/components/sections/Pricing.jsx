@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import video1 from "../../images/card_bg1.mp4";
-import video4 from "../../images/card_video3.mp4";
-import video2 from "../../images/card_video2.mp4";
-import video3 from "../../images/card_video4.mp4";
-import gif1 from "../../images/Mr3W.gif";
-import gif2 from "../../images/card.gif";
-import gif3 from "../../images/card_gif4.gif";
-import gif4 from "../../images/card3.gif";
+import video4 from "../../images/card_bg2.mp4";
+import video2 from "../../images/card_bg3.mp4";
+import video3 from "../../images/card_bg4.mp4";
+import gif1 from "../../images/PricingCardLogo1.gif";
+import gif2 from "../../images/PricingCardLogo2.gif";
+import gif3 from "../../images/PricingCardLogo3.gif";
+import gif4 from "../../images/PricingCardLogo4.gif";
 
 const Container = styled.div`
   display: flex;
@@ -59,58 +59,58 @@ const Desc = styled.p`
   }
 `;
 
-const PricingGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-`;
+// const PricingGrid = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 20px;
+//   width: 100%;
+// `;
 
-const PricingCard = styled.div`
-  background-color: linear-gradient(#2c2c2c,transparent);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-  padding: 20px;
-  width: 100%;
-  max-width: 300px;
-  text-align: center;
-  color: ${({ theme }) => theme.text_secondary};
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+// const PricingCard = styled.div`
+//   background-color: linear-gradient(#2c2c2c,transparent);
+//   border: 1px solid rgba(255, 255, 255, 0.2);
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+//   border-radius: 16px;
+//   padding: 20px;
+//   width: 100%;
+//   max-width: 300px;
+//   text-align: center;
+//   color: ${({ theme }) => theme.text_secondary};
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-`;
+//   &:hover {
+//     transform: translateY(-10px);
+//     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+//   }
+// `;
 
-const PricingTitle = styled.h2`
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.text_primary};
-`;
+// const PricingTitle = styled.h2`
+//   font-size: 28px;
+//   font-weight: 700;
+//   margin-bottom: 20px;
+//   color: ${({ theme }) => theme.text_primary};
+// `;
 
-const Price = styled.p`
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: ${({ theme }) => theme.text_primary};
-`;
+// const Price = styled.p`
+//   font-size: 36px;
+//   font-weight: 700;
+//   margin-bottom: 10px;
+//   color: ${({ theme }) => theme.text_primary};
+// `;
 
-const Features = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-`;
+// const Features = styled.ul`
+//   list-style-type: none;
+//   padding: 0;
+//   margin: 0;
+// `;
 
-const Feature = styled.li`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary};
-  margin-bottom: 8px;
-`;
+// const Feature = styled.li`
+//   font-size: 16px;
+//   font-weight: 400;
+//   color: ${({ theme }) => theme.text_secondary};
+//   margin-bottom: 8px;
+// `;
 
 const BlogContainer = styled.div`
   display: flex;
@@ -162,45 +162,7 @@ const GifIcon = styled.img`
   border-radius: 50%; /* Make it circular if desired */
   z-index: 2; /* Keep above the other layers */
 `;
-const InitialVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-  opacity: 1; /* Visible by default */
-  visibility: visible;
-  transition: opacity 0.3s ease;
-  z-index: 0; /* Behind the title */
 
-  ${BlogCard}:hover & {
-    opacity: 0; /* Hide on hover */
-    visibility: hidden;
-  }
-`;
-
-const InitialGif = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-  opacity: 1; /* Visible by default */
-  visibility: visible;
-  transition: opacity 0.3s ease;
-    z-index: 0; /* Behind the title */
-  filter: blur(1px); /* Add blur effect */
-  
-
-  ${BlogCard}:hover & {
-    opacity: 0; /* Hide GIF on hover */
-    visibility: hidden;
-  }
-`;
 
 const BlogVideo = styled.video`
   position: absolute;
@@ -234,7 +196,7 @@ const BlogDesc = styled.p`
   z-index: 1; /* Above the video */
 
   ${BlogCard}:hover & {
-    opacity: 1; /* Reveal description */
+    opacity: 100; /* Reveal description */
     visibility: visible;
   }
 `;
@@ -285,7 +247,7 @@ const Blog = () => {
   return (
     <BlogContainer id="Blogs">
       <BlogTitle>Latest Blogs</BlogTitle>
-      <Desc>Stay updated with the latest trends and insights in Web3</Desc>
+      <Desc style={{color:"black"}}>Stay updated with the latest trends and insights in Web3</Desc>
       <BlogStrip>
         {blogPosts.map((post, index) => (
           <BlogCard key={`blog-${index}`}>

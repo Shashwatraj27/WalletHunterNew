@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
 import Hero from "./components/sections/Hero";
 import Partners from "./components/sections/Partners";
 import Services from "./components/sections/Services";
@@ -9,10 +9,18 @@ import Pricing from "./components/sections/Pricing";
 import Products from "./components/sections/Products";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
+import WhitepaperPage from "./components/whitepaper/WhitepaperPage"; // Import the new WhitepaperPage component
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { WobVisionPage,JourneyWobBeePage,BeeStoryPage } from "./components/StoryPages";
+import WalletShowsPage from "./components/whitepaper/WalletShowsPage"
+import BlogsPage from "./components/blog/BlogsPage";
+import BlogDetail from "./components/blog/BlogDetail";
+import CaseStudy from "./components/casestudy/CaseStudy";
+import CaseStudyDetails, { ModeNetworkCaseStudy, QgovTokenCaseStudy } from "./components/casestudy/CaseStudyDetails";
 
+// Styled components
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
@@ -21,10 +29,9 @@ const Body = styled.div`
 `;
 
 const Wrapper = styled.div`
-  
   background: linear-gradient(
       38.73deg,
-      rgba(201, 32, 184, 0)  0%,
+      rgba(201, 32, 184, 0) 0%,
       rgba(201, 32, 184, 0) 50%
     ),
     linear-gradient(
@@ -33,18 +40,17 @@ const Wrapper = styled.div`
       rgba(0, 70, 209, 0.15) 100%
     );
   width: 100%;
-  
 `;
 
 const CookieModal = styled.div`
-  position: Fixed;
-  bottom: 0%; /* Position closer to the bottom */
-  left: -350%; /* Position on the left side */
+  position: fixed;
+  bottom: 0%;
+  left: -350%;
   z-index: 9999;
-  width: 700%; /* Small rectangular size */
+  width: 700%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 200px; /* Remove any default margin */
-  padding: 150px; /* Remove any default padding */
+  margin: 200px;
+  padding: 150px;
 
   .modal-content {
     background-color: #f1f1f1;
@@ -120,21 +126,43 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
         <Navbar />
-        <Body>
-          <div>
-            <Hero />
-            <Wrapper>
-              <Partners />
-              <Services />
-            </Wrapper>
-            <Products />
-            <Wrapper>
-              <Pricing />
-              <Contact />
-            </Wrapper>
-            <Footer />
-          </div>
-        </Body>
+        
+        <Routes>
+          {/* Define routes */}
+          <Route
+            path="/"
+            element={
+              <Body>
+                <div>
+                  <Hero />
+                  <Wrapper>
+                    <Partners />
+                    <Services />
+                  </Wrapper>
+                  <Products />
+                  <Wrapper>
+                    <Pricing />
+                    <Contact />
+                  </Wrapper>
+                  <Footer />
+                </div>
+              </Body>
+            }
+          />
+          <Route path="/whitepaper" element={<WhitepaperPage />} />
+
+          <Route path="/whitepaper/bee-story" element={<BeeStoryPage />} />
+        <Route path="/whitepaper/wob-vision" element={<WobVisionPage />} />
+        <Route path="/whitepaper/journey" element={<  JourneyWobBeePage />} />
+        <Route path="/walletshows" element={< WalletShowsPage />} />
+        <Route path="/Blog"  element={< BlogsPage />}/>
+        
+        <Route path="/Blog/:slug" element={<BlogDetail />} />
+        <Route path="/casestudy" element={<CaseStudy />} />
+        <Route path="/casestudy/qgov-case-study" element={<QgovTokenCaseStudy />} />
+        <Route path="/casestudy/mode-network-case-study" element={<ModeNetworkCaseStudy />} />
+        </Routes>
+        
 
         {/* Cookie Consent Modal */}
         {showModal && (

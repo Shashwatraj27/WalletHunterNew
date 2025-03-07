@@ -140,20 +140,7 @@ const TrialCallSection = styled.div`
 `;
 
 
-const TrialCallTitle = styled.h2`
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #f0f0f0;
-  animation: ${fadeInUp} 1.2s ease-in-out;
-`;
 
-const TrialCallText = styled.p`
-  font-size: 18px;
-  line-height: 1.6;
-  color: #dcdcdc; /* Lighter text for contrast */
-  margin-bottom: 20px;
-  animation: ${fadeInUp} 1.4s ease-in-out;
-`;
 
 const RequestTrialButton = styled.a`
   display: inline-block;

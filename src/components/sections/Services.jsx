@@ -1,12 +1,12 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { motion } from "framer-motion";
+
 import { FaBullseye, FaGift, FaUserFriends, FaSearch } from "react-icons/fa"; // Example icons
-import { Gif } from "@mui/icons-material";
-import gif4 from "../../images/card3.gif";
+
+import gif4 from "../../images/PricingCardLogo4.gif";
 import gif1 from "../../images/services1.gif";
 import gif2 from "../../images/arc_reactor.gif";
-import gif3 from "../../images/card_gif4.gif";
+import gif3 from "../../images/PricingCardLogo3.gif";
 
 const Container = styled.div`
   display: flex;
@@ -109,25 +109,7 @@ const Card = styled.div`
   }
 `;
 
-const CardIcon = styled(motion.div)`
-  font-size: 36px;
-  color: ${({ theme }) => theme.iconColor}; /* Updated icon color */
-  margin-bottom: 16px;
-  animation: ${fadeIn} 0.5s ease-in-out;
 
-  &:hover {
-    animation: bounce 1s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-`;
 
 const CardTitle = styled.h2`
   font-size: 20px;
